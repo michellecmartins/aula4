@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::match(['get', 'post'], '/herois', 'HeroiController@index');
+Route::view('/herois/novo', 'herois.index');
